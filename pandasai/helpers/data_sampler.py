@@ -6,13 +6,12 @@ Only df.head() is sent to LLM API, hence the df.head() is processed
  to remove any personal or sensitive information.
 
 """
-
-import random
 import pandas as pd
 import numpy as np
 
 from .df_info import df_type, DataFrameType
 from .anonymizer import Anonymizer
+import secrets
 
 
 class DataSampler:
@@ -72,15 +71,15 @@ class DataSampler:
             col_sample.extend(col_values)
             n -= len(col_values)
         else:
-            col_sample.extend(random.sample(list(col_values), n))
+            col_sample.extend(secrets.SystemRandom().sample(list(col_values), n))
             n = 0
 
         # if there are still rows to sample, sample them randomly
         if n > 0 and len(col_values) > 0:
-            col_sample.extend(random.choices(list(col_values), k=n))
+            col_sample.extend(secrets.SystemRandom().choices(list(col_values), k=n))
         else:
             col_sample.extend([np.nan] * n)
 
         # shuffle the column sample before returning it
-        random.shuffle(col_sample)
+        secrets.SystemRandom().shuffle(col_sample)
         return col_sample
