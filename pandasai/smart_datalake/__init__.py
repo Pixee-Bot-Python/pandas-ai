@@ -356,7 +356,7 @@ class SmartDatalake:
                     retry_count += 1
 
                     self._logger.log(
-                        f"Failed to execute code with a correction framework "
+                        "Failed to execute code with a correction framework "
                         f"[retry number: {retry_count}]",
                         level=logging.WARNING,
                     )

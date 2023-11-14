@@ -145,13 +145,13 @@ class CodeManager:
                 except ModuleNotFoundError:
                     self._logger.log(
                         f"Unable to fix `NameError`: package '{name_to_be_imported}'"
-                        f" could not be imported.",
+                        " could not be imported.",
                         level=logging.DEBUG,
                     )
                 except Exception as new_exc:
                     exc = new_exc
                     self._logger.log(
-                        f"Unable to fix `NameError`: an exception was raised: "
+                        "Unable to fix `NameError`: an exception was raised: "
                         f"{traceback.format_exc()}",
                         level=logging.DEBUG,
                     )

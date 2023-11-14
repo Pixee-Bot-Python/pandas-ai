@@ -55,7 +55,7 @@ def output_type_factory(
         logger.log(
             f"Unknown value for the parameter `output_type`: '{output_type}'."
             f"Possible values are: {possible_types_msg} and None for default "
-            f"output type (miscellaneous).",
+            "output type (miscellaneous).",
             level=logging.WARNING,
         )
 

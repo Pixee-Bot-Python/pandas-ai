@@ -50,7 +50,7 @@ class BaseOutputType(ABC):
         type_ok = self._validate_type(actual_type)
         if not type_ok:
             validation_logs.append(
-                f"The result dict contains inappropriate 'type'. "
+                "The result dict contains inappropriate 'type'. "
                 f"Expected '{self.name}', actual '{actual_type}'."
             )
         value_ok = self._validate_value(actual_value)

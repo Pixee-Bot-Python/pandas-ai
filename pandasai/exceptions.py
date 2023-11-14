@@ -55,7 +55,7 @@ class UnsupportedModelError(Exception):
         self.model = model_name
         super().__init__(
             f"Unsupported model: The model '{model_name}' doesn't exist "
-            f"or is not supported yet."
+            "or is not supported yet."
         )
 
 
